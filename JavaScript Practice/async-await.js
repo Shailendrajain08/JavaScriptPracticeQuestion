@@ -10,6 +10,11 @@ async function handlePromise () {
     const val = await p 
     console.log("Hello Async world")
     console.log(val)
+
+    // both val and val2 will print the output at the same time 
+    const val2 = await p 
+    console.log("Hello Async world 2")
+    console.log(val2)
 }
 
 handlePromise()
