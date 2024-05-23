@@ -59,23 +59,60 @@
 
 // Polyfills of filter() 
 
-Array.prototype.myFilter = function(cb) {
-    let temp = []
+// Array.prototype.myFilter = function(cb) {
+//     let temp = []
 
-    for(let i = 0; i<this.length; i++){
-        if(cb(this[i], i, this)){
-            temp.push(this[i]);
-        }
-    }
-    return temp
-}
+//     for(let i = 0; i<this.length; i++){
+//         if(cb(this[i], i, this)){
+//             temp.push(this[i]);
+//         }
+//     }
+//     return temp
+// }
 
-// use of filter polyfills
+// // use of filter polyfills
+
+// const nums = [1,2,3,4,5]
+
+// const moreThanTwo = nums.myFilter((num) => {
+//     return num > 2
+// })
+
+// console.log(moreThanTwo)
+
+// ==========================================================================
+
+// Polyfill for reduce () 
+
+// Array.prototype.myReduce = function (cb, initialValue) {
+//     var accumulator = initialValue
+
+//     for (let i = 0; i < this.length; i++) {
+//         accumulator = accumulator ? cb(accumulator, this[i], i, this) : this[i];
+//     }
+//     return accumulator;
+// }
+
+// // use of myReduce 
+
+// const nums = [1,2,3,4,5]
+
+// const sum = nums.myReduce((acc, curr, i, arr) => {
+//     return acc+curr;
+// }, 0)
+
+// console.log(sum)
+
+// Chaining with Map() 
 
 const nums = [1,2,3,4,5]
 
-const moreThanTwo = nums.myFilter((num) => {
-    return num > 2
+const mapResult = nums.map((arr) => {
+    return arr + 2 ;
+}).filter((arr)=> {
+    return arr > 3
+}).reduce((acc, curr) => {
+    return acc + curr
 })
 
-console.log(moreThanTwo)
+console.log(mapResult)
