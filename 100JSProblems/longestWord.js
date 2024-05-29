@@ -22,4 +22,6 @@ const findLongestWord = (str) => {
 
 const str = "zebra junction amplify ribbon telescope quiver island navy orbit kettle mosaic vivid quantum"
 
+// const str = "     "
+
 console.log(findLongestWord(str))
